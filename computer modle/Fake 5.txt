@@ -1,0 +1,53 @@
+package common;
+//fake code
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int len = input.nextInt();
+        int arrx[] = new int[len];
+        int arry[] = new int[len];
+        int xi = 0;
+        int yi = 0;
+        for (int i = 0; i < len; i++) {
+            arrx[i] = Integer.parseInt(input.next());
+            xi += arrx[i];
+        }
+        for (int i = 0; i < len; i++) {
+            arry[i] = Integer.parseInt(input.next());
+            xi += arrx[i];
+        }
+        int x = xi / 8;
+        int y = yi / 8;
+        int M[] = new int[len];
+        int sumM = 0;
+        for (int i = 0; i < len; i++) {
+            M[i] = (arrx[i] * x) * (arry[i] * y); // First result M
+            sumM+=M[i];
+        }
+        // Function to collect (xi-x)^2
+        int sumxix2 = 0;
+        int xix2[] = new int[len];
+        for (int i = 0; i < len; i++) {
+            xix2[i] = (arrx[i] * x) ^ 2;
+            sumxix2 +=xix2[i];
+        }
+        // Function to collect (yi-y)^2
+        int sumyiy2 = 0;
+        int yiy2[] = new int[len];
+        for (int i = 0; i < len; i++) {
+            yiy2[i] = (arry[i] * y) ^ 2;
+            sumyiy2+=yiy2[i];
+        }
+        int sumXi2 = 0;
+        int xi2[] = new int[len];
+        for (int i = 0; i < len; i++) {
+            xi2[i]=arrx[i]^2;
+            sumXi2+=xi2[i];
+        }
+
+
+    }
+}
